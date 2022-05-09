@@ -1,8 +1,16 @@
+// * Modules
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+// * Components
+import Form from '../../components/Form/Form';
+import ResponseBox from '../../components/Response/ResponseBox';
+
+// * Styling
+import './Home.scss';
+
 export default function Home() {
-  const [request, setRequest] = useState(null);
+  const [responses, setResponses] = useState([]);
 
   useEffect(() => {
     const getRequest = async () => {
@@ -35,5 +43,20 @@ export default function Home() {
     // getRequest();
   }, []);
 
-  return <div>Home</div>;
+  return (
+    <div className='home'>
+      <div className='home__container'>
+        <h1 className='home__heading'>Fun With AI</h1>
+        <Form responses={setResponses} />
+        <h2 className='home__heading-2'>Responses</h2>
+        <div className='home__responses'>
+          {/*
+           responses.map(response => 
+            <ResponseBox prompt={response.prompt} response={response.response}/>
+            )
+           */}
+        </div>
+      </div>
+    </div>
+  );
 }
