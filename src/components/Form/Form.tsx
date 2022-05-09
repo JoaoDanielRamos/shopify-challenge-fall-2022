@@ -69,10 +69,10 @@ export default function Form({
   };
 
   // * Send a post request to the OpenAI API
-  const getResponse = async (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const thisTest = {
+    const request = {
       prompt: prompt,
       temperature: 0.5,
       max_tokens: 64,
@@ -85,7 +85,7 @@ export default function Form({
       const response = await axios({
         method: 'post',
         baseURL: 'https://api.openai.com/v1/engines/text-curie-001/completions',
-        data: thisTest,
+        data: request,
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
@@ -98,7 +98,7 @@ export default function Form({
       };
 
       setResponses([...responses, data]);
-      alert(data.response);
+      localStorage.setItem('responses', responses);
       toast.success('Response added successfully!');
     } catch (error) {
       console.log(error);
@@ -107,7 +107,7 @@ export default function Form({
   };
 
   return (
-    <form onSubmit={getResponse} className='form'>
+    <form onSubmit={handleSubmit} className='form'>
       {/* Fixing font size on React Toastify so it wont bug with CSS Reset*/}
       <div className='toastfy-fix'>
         <ToastContainer />
