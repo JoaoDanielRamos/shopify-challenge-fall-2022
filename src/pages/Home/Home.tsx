@@ -9,7 +9,7 @@ import ResponseBox from '../../components/Response/ResponseBox';
 import './Home.scss';
 
 export default function Home() {
-  const [responses, setResponses] = useState([]);
+  const [responses, setResponses] = useState<any[]>([]);
 
   useEffect(() => {
     if (localStorage.getItem('responses')) {
@@ -24,11 +24,12 @@ export default function Home() {
         <Form setResponses={setResponses} responses={responses} />
         <h2 className='home__heading-2'>Responses</h2>
         <div className='home__responses'>
-          {/*
-           responses.map(response => 
-            <ResponseBox prompt={response.prompt} response={response.response}/>
-            )
-           */}
+          {responses.map(response => (
+            <ResponseBox
+              prompt={response.prompt}
+              response={response.response}
+            />
+          ))}
         </div>
       </div>
     </div>

@@ -99,6 +99,7 @@ export default function Form({
 
       setResponses([...responses, data]);
 
+      // * Checking if local storage exists
       if (!localStorage.getItem('responses')) {
         // @ts-ignore
         localStorage.setItem('responses', JSON.stringify([data]));

@@ -4,16 +4,17 @@
   flex-direction: column;
   align-items: flex-start;
   row-gap: 2rem;
+  margin-bottom: 4rem;
 
   &__paragraph {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
 
   &__input {
     width: 100%;
-    height: 14rem;
+    height: 16rem;
     font-family: Sora;
     padding: 1rem;
     font-size: 1.6rem;
@@ -21,6 +22,8 @@
     border-radius: 0.5rem;
     resize: none;
     transition: 0.5s all ease-in-out;
+    background-color: transparent;
+    border: 1.5px solid rgb(119, 119, 119);
 
     &:focus {
       outline: none !important;
