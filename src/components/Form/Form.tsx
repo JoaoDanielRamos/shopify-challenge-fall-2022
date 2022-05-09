@@ -72,7 +72,7 @@ export default function Form({
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const request = {
+    const requestData = {
       prompt: prompt,
       temperature: 0.5,
       max_tokens: 64,
@@ -85,7 +85,7 @@ export default function Form({
       const response = await axios({
         method: 'post',
         baseURL: 'https://api.openai.com/v1/engines/text-curie-001/completions',
-        data: request,
+        data: requestData,
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
@@ -98,7 +98,21 @@ export default function Form({
       };
 
       setResponses([...responses, data]);
-      localStorage.setItem('responses', responses);
+
+      if (!localStorage.getItem('responses')) {
+        // @ts-ignore
+        localStorage.setItem('responses', JSON.stringify([data]));
+      } else {
+        // @ts-ignore
+        const localStorageData = JSON.parse(localStorage.getItem('responses'));
+
+        // @ts-ignore
+        localStorage.setItem(
+          'responses',
+          JSON.stringify([...localStorageData, data])
+        );
+      }
+
       toast.success('Response added successfully!');
     } catch (error) {
       console.log(error);

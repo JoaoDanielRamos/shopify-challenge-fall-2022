@@ -12,7 +12,10 @@ export default function Home() {
   const [responses, setResponses] = useState([]);
 
   useEffect(() => {
-    console.log(responses);
+    if (localStorage.getItem('responses')) {
+      // @ts-ignore
+      setResponses(JSON.parse(localStorage.getItem('responses')));
+    }
   }, []);
   return (
     <div className='home'>
