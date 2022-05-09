@@ -1,7 +1,17 @@
+// * Modules
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// * Pages
+import Home from './pages/Home/Home';
+
 export default function App() {
   return (
     <>
-      <h1>Shopify Internship</h1>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 }
