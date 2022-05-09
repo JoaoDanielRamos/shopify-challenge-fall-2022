@@ -25,7 +25,7 @@ export default function Form({
   useEffect(() => {
     setInterval(() => {
       setPlaceholder(changePlaceHolder);
-    }, 3000);
+    }, 2500);
   }, []);
 
   // * Functionality that change the Placeholder of the textarea input so the user can get some prompt ideas.
