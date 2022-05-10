@@ -97,7 +97,7 @@ export default function Form({
         response: response.data.choices[0].text,
       };
 
-      setResponses([...responses, data]);
+      setResponses([data, ...responses]);
 
       // * Checking if local storage exists
       if (!localStorage.getItem('responses')) {
@@ -110,7 +110,7 @@ export default function Form({
         // @ts-ignore
         localStorage.setItem(
           'responses',
-          JSON.stringify([...localStorageData, data])
+          JSON.stringify([data, ...localStorageData])
         );
       }
 
