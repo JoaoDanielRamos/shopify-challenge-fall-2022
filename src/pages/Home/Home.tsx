@@ -24,8 +24,9 @@ export default function Home() {
         <Form setResponses={setResponses} responses={responses} />
         <h2 className='home__heading-2'>Responses</h2>
         <div className='home__responses'>
-          {responses.map(response => (
+          {responses.map((response, index) => (
             <ResponseBox
+              key={index + 1}
               prompt={response.prompt}
               response={response.response}
             />
