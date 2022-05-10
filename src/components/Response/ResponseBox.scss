@@ -4,7 +4,7 @@
   padding: 2rem;
   border-radius: 1.2rem;
 
-  background-color: rgb(72, 0, 255);
+  background-color: rgb(0, 168, 160);
   color: #ffffff;
   font-size: 1.6rem;
 
@@ -36,14 +36,14 @@
 
   /* Track */
   &::-webkit-scrollbar-track {
-    background: rgb(45, 0, 160);
+    background: rgb(0, 91, 73);
     border-top-right-radius: 1.2rem !important;
     border-bottom-right-radius: 1.2rem !important;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: rgb(142, 98, 255);
+    background: rgb(215, 95, 255);
     border-top-right-radius: 1.2rem !important;
     border-bottom-right-radius: 1.2rem !important;
   }
