@@ -30,8 +30,8 @@ export default function Form({
 
   // * Functionality that change the Placeholder of the textarea input so the user can get some prompt ideas.
   const changePlaceHolder = () => {
-    const action = ['Write', 'Describe', 'Create', 'Compose', 'Tell me'];
-    const thing = ['poem', 'song', 'sentence', 'phrase', 'joke'];
+    const action = ['Write', 'Create', 'Compose', 'Tell me'];
+    const thing = ['poem', 'song', 'sentence', 'phrase', 'tale', 'joke'];
     const topic = [
       'love',
       'technology',
