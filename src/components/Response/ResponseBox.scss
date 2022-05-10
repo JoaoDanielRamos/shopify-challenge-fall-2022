@@ -18,19 +18,19 @@
   }
 
   &__prompt {
-    span {
-      font-weight: 600;
-    }
-    line-height: 1.4;
     margin-bottom: 1rem;
   }
 
+  &__prompt,
   &__response {
-    letter-spacing: 0.1px;
     line-height: 1.4;
+    letter-spacing: 0.1px;
 
     span {
+      letter-spacing: 0.3px;
+
       font-weight: 600;
+      color: $color-highlight;
     }
   }
 
