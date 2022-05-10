@@ -1,0 +1,68 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 42.5rem;
+
+  &__paragraph {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    height: 16rem;
+    font-family: Sora;
+    padding: 1rem;
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    resize: none;
+    transition: 0.5s all ease-in-out;
+    background-color: transparent;
+    border: 1.5px solid rgb(119, 119, 119);
+
+    @media only screen and (max-width: 425px) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none !important;
+      border-color: rgb(0, 168, 160);
+      box-shadow: 0 0 3px rgb(0, 168, 160);
+    }
+
+    &::placeholder {
+      transform: skewX(-5deg);
+
+      transition: 0.5s all ease-in-out;
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+    font-family: Sora;
+    background-color: transparent;
+    border: none;
+    padding: 1rem 2.4rem;
+    font-size: 1.6rem;
+    background-color: rgb(0, 168, 160);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s all ease;
+
+    &:hover {
+      background-color: rgb(0, 168, 160);
+      transition: 0.3s all ease;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.toastfy-fix {
+  font-size: 1.6rem !important;
+}

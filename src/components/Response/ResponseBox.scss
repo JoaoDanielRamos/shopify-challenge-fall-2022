@@ -1,0 +1,55 @@
+.responseBox {
+  width: 32rem;
+  height: 16rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+
+  background-color: rgb(0, 168, 160);
+  color: #ffffff;
+  font-size: 1.6rem;
+
+  overflow-y: auto;
+
+  @media only screen and (max-width: 425px) {
+    width: 100%;
+  }
+
+  &__prompt {
+    span {
+      font-weight: 600;
+    }
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  &__response {
+    span {
+      font-weight: 600;
+    }
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgb(0, 91, 73);
+    border-top-right-radius: 1.2rem !important;
+    border-bottom-right-radius: 1.2rem !important;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(215, 95, 255);
+    border-top-right-radius: 1.2rem !important;
+    border-bottom-right-radius: 1.2rem !important;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(104, 44, 255);
+  }
+}
